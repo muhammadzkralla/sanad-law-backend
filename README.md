@@ -43,6 +43,7 @@ to know how to integrate your own Firebase Cloud Storage to the project. <br>
 Once you have downloaded the JSON file: <br>
 1- add it under the resources package. <br>
 2- Replace the `CREDENTIALS_FILE_PATH` variable in the `StorageServiceImpl` class with the path of your JSON file.
+3- Replace the `ClassPathResource` value in the `ApplicationConfig.java` file at line 56 with the path of yout JSON file.
 
 That's it, now you are good to go! Run the project in Intellij or you can run this command in the root directory if you have maven installed on your machine:
 ```bash
