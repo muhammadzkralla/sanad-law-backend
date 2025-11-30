@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: sanad-db
+    environment:
+      POSTGRES_DB: sanad
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 22220044
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - sanad-network
+
+  api:
+    image: zkrallah/sanad-mvp:v1.0.0
+    container_name: sanad-api
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/sanad
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: 22220044
+      DDL_AUTO: update
+    ports:
+      - "8080:8080"
+    networks:
+      - sanad-network
+
+volumes:
+  postgres_data:
+
+networks:
+  sanad-network:
+    driver: bridge

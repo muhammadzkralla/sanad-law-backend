@@ -53,7 +53,7 @@ public class ApplicationConfig {
     @Bean
     FirebaseMessaging firebaseMessaging() throws IOException {
         GoogleCredentials googleCredentials = GoogleCredentials.fromStream(
-                new ClassPathResource("sanad-law-firebase-adminsdk-zxvzw-9100642229.json")
+                new ClassPathResource("sanad-law-firebase-adminsdk-zxvzw-e179dcf52a.json")
                         .getInputStream());
 
         FirebaseOptions firebaseOptions = FirebaseOptions.builder()

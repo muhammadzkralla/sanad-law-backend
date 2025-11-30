@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 public class StorageServiceImpl implements StorageService {
 
     private final UserService userService;
-    private static final String CREDENTIALS_FILE_PATH = "sanad-law-firebase-adminsdk-zxvzw-9100642229.json";
+    private static final String CREDENTIALS_FILE_PATH = "sanad-law-firebase-adminsdk-zxvzw-e179dcf52a.json";
 
     private String uploadFile(File file, String fileName) throws IOException {
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(CREDENTIALS_FILE_PATH)) {
